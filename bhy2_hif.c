@@ -197,7 +197,7 @@ static int8_t bhy2_wait_status_ready(struct bhy2_hif_dev *hif)
 {
     uint16_t retry;
     uint8_t int_status;
-    int8_t rslt;
+    int8_t rslt = 0;
 
     /* Wait status ready */
     for (retry = 0; retry < BHY2_QUERY_PARAM_STATUS_READY_MAX_RETRY; ++retry)
@@ -1154,7 +1154,7 @@ int8_t bhy2_hif_get_bsx_state(uint16_t param_id,
     uint8_t section_num = 0;
     uint16_t tmp_state_len = 0;
     uint32_t read_len;
-    int8_t rslt;
+    int8_t rslt = 0;
     uint8_t tmp_bsx_state_buf[BHY2_BSX_STATE_STRUCT_LEN];
 
     while (complete_flag == 0)
