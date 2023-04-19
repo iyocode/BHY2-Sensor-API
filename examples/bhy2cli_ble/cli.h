@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Bosch Sensortec GmbH. All rights reserved.
+ * Copyright (c) 2023 Bosch Sensortec GmbH. All rights reserved.
  *
  * BSD-3-Clause
  *
@@ -38,13 +38,14 @@
 #ifndef _CLI_H_
 #define _CLI_H_
 
-#include <stdint.h>
-#include <stddef.h>
-
 /* Start of CPP guard */
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#include <stdint.h>
+#include <stddef.h>
+
 #ifndef CLI_CMD_LEN
 #define CLI_CMD_LEN          16
 #endif

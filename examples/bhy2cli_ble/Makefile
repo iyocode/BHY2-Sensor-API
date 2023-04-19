@@ -6,25 +6,37 @@ BHY2_INTF ?=
 
 COINES_BACKEND ?= COINES_BRIDGE
 
-C_SRCS += dinject.c
-C_SRCS += parse.c
-C_SRCS += logbin.c
-C_SRCS += cli.c
-C_SRCS += bhy2cli_callbacks.c
-C_SRCS += common_callbacks.c
-C_SRCS += verbose.c
-C_SRCS += ../common/common.c
-C_SRCS += ../../bhy2.c
-C_SRCS += ../../bhy2_hif.c
-C_SRCS += ../../bhy2_parse.c
-C_SRCS += ../../bhy2_klio.c
-C_SRCS += ../../bhy2_pdr.c
-C_SRCS += ../../bhy2_swim.c
-C_SRCS += ../../bhy2_bsec.c
-INCLUDEPATHS += .
-INCLUDEPATHS += ../common
-INCLUDEPATHS += ../..
-INCLUDEPATHS += ../../firmware
+API_LOCATION ?= ../..
+
+FW_LOCATION ?= ../..
+
+COMMON_LOCATION ?= ..
+
+C_SRCS += \
+post_mortem.c \
+dinject.c \
+parse.c \
+logbin.c \
+cli.c \
+bhy2cli_callbacks.c \
+common_callbacks.c \
+verbose.c \
+$(COMMON_LOCATION)/common/common.c \
+$(API_LOCATION)/bhy2.c \
+$(API_LOCATION)/bhy2_hif.c \
+$(API_LOCATION)/bhy2_parse.c \
+$(API_LOCATION)/bhy2_klio.c \
+$(API_LOCATION)/bhy2_pdr.c \
+$(API_LOCATION)/bhy2_swim.c \
+$(API_LOCATION)/bhy2_bsec.c \
+$(API_LOCATION)/bhi3.c \
+$(API_LOCATION)/bhi3_multi_tap.c \
+$(API_LOCATION)/bhy2_head_tracker.c
+
+INCLUDEPATHS += . \
+$(COMMON_LOCATION)/common \
+$(API_LOCATION) \
+$(FW_LOCATION)/firmware
 
 # By default, the sensor is connected over SPI. Define this to change to I2C
 ifeq ($(BHY2_INTF), I2C)

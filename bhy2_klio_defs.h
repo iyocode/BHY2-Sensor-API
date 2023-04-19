@@ -31,13 +31,18 @@
 * POSSIBILITY OF SUCH DAMAGE.
 *
 * @file       bhy2_klio_defs.h
-* @date       2022-10-17
-* @version    v1.4.1
+* @date       2023-02-10
+* @version    v1.5.0
 *
 */
 
 #ifndef __BHY2_KLIO_DEFS_H__
 #define __BHY2_KLIO_DEFS_H__
+
+/* Start of CPP guard */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <stdint.h>
 
@@ -335,5 +340,10 @@ typedef enum
      */
     KLIO_DRIVER_ERROR_OPERATION_PENDING = 8
 } bhy2_klio_driver_error_state_t;
+
+/* End of CPP guard */
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __BHY2_KLIO_DEFS_H__ */

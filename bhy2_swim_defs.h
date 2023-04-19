@@ -31,13 +31,18 @@
 * POSSIBILITY OF SUCH DAMAGE.
 *
 * @file       bhy2_swim_defs.h
-* @date       2022-10-17
-* @version    v1.4.1
+* @date       2023-02-10
+* @version    v1.5.0
 *
 */
 
 #ifndef _BHY2_SWIM_DEFS_H_
 #define _BHY2_SWIM_DEFS_H_
+
+/* Start of CPP guard */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <stdint.h>
 
@@ -112,5 +117,10 @@ typedef struct bhy2_swim_version
 
 typedef void (*bhy2_swim_algo_callback)(uint32_t seconds, uint32_t nanoseconds,
                                         const struct bhy2_swim_data_parse *callback_info);
+
+/* End of CPP guard */
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* _BHY2_SWIM_DEFS_H_ */

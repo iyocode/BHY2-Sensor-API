@@ -31,23 +31,24 @@
 * POSSIBILITY OF SUCH DAMAGE.
 *
 * @file       bhy2_pdr.h
-* @date       2022-10-17
-* @version    v1.4.1
+* @date       2023-02-10
+* @version    v1.5.0
 *
 */
 
 #ifndef __BHY2_PDR_H__
 #define __BHY2_PDR_H__
 
+/* Start of CPP guard */
+#ifdef __cplusplus
+extern "C" {
+#endif /*__cplusplus */
+
 #include <stdint.h>
 #include <stdlib.h>
 
 #include "bhy2.h"
 #include "bhy2_pdr_defs.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif /*__cplusplus */
 
 void bhy2_pdr_parse_frame(const uint8_t *data, struct bhy2_pdr_frame *pdr_frame);
 
@@ -69,6 +70,7 @@ int8_t bhy2_pdr_get_pdr_variant(uint8_t *variant, struct bhy2_dev *dev);
 
 int8_t bhy2_pdr_get_device_position(uint8_t *dev_pos, struct bhy2_dev *dev);
 
+/* End of CPP guard */
 #ifdef __cplusplus
 }
 #endif /*__cplusplus */

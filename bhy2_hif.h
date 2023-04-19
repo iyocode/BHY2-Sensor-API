@@ -31,8 +31,8 @@
 * POSSIBILITY OF SUCH DAMAGE.
 *
 * @file       bhy2_hif.h
-* @date       2022-10-17
-* @version    v1.4.1
+* @date       2023-02-10
+* @version    v1.5.0
 *
 */
 
@@ -568,10 +568,9 @@ int8_t bhy2_hif_inject_data(const uint8_t *payload, uint32_t payload_len, struct
  */
 int8_t bhy2_hif_wait_status_ready(struct bhy2_hif_dev *hif);
 
+/* End of CPP guard */
 #ifdef __cplusplus
 }
 #endif
-
-/* End of CPP guard */
 
 #endif /* __BHY2_HIF_H__ */

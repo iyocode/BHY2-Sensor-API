@@ -31,19 +31,20 @@
 * POSSIBILITY OF SUCH DAMAGE.
 *
 * @file       bhy2_pdr_defs.h
-* @date       2022-10-17
-* @version    v1.4.1
+* @date       2023-02-10
+* @version    v1.5.0
 *
 */
 
 #ifndef __BHY2_PDR_DEFS_H__
 #define __BHY2_PDR_DEFS_H__
 
-#include <stdint.h>
-
+/* Start of CPP guard */
 #ifdef __cplusplus
 extern "C" {
 #endif /*__cplusplus */
+
+#include <stdint.h>
 
 #define BHY2_SENSOR_ID_PDR             UINT8_C(113)
 #define BHY2_SENSOR_ID_PDR_LOG         UINT8_C(119)
@@ -68,6 +69,8 @@ extern "C" {
 #define BHY2_PDR_DEV_POS_HEAD          UINT8_C(0x01)
 #define BHY2_PDR_DEV_POS_SHOE          UINT8_C(0x02)
 #define BHY2_PDR_DEV_POS_BACKPACK      UINT8_C(0x03)
+
+#define BHY2_PDR_FIFO_LEN              UINT8_C(16)
 
 struct bhy2_pdr_frame /* Description; Scaling and format; Range; Comment */
 {
@@ -97,6 +100,7 @@ typedef struct
     float gyro[3];
 } BHY2_PACKED bhy2_pdr_log_frame_t;
 
+/* End of CPP guard */
 #ifdef __cplusplus
 }
 #endif /*__cplusplus */
