@@ -133,14 +133,15 @@ typedef struct bhi3_wrist_wear_wakeup_config_param
     uint8_t angle_portrait_up;
     uint8_t min_dur_moved;
     uint8_t min_dur_quite;
-} __attribute__ ((packed)) bhi3_wrist_wear_wakeup_config_param_t;
+} BHY2_PACKED bhi3_wrist_wear_wakeup_config_param_t;
+
 
 typedef struct bhi3_any_no_motion_config_param
 {
     uint16_t duration;
     uint8_t axis;
     uint16_t threshold;
-} __attribute__ ((packed)) bhi3_any_no_motion_config_param_t;
+} BHY2_PACKED bhi3_any_no_motion_config_param_t;
 
 typedef struct bhi3_wrist_gesture_detect_config_param
 {
@@ -154,7 +155,7 @@ typedef struct bhi3_wrist_gesture_detect_config_param
     uint16_t lp_mean_filter_coeff;
     uint16_t max_duration_jiggle_peaks;
     uint8_t device_position;
-} __attribute__ ((packed)) bhi3_wrist_gesture_detect_config_param_t;
+} BHY2_PACKED bhi3_wrist_gesture_detect_config_param_t;
 
 enum bhi3_wrist_gesture_activity {
     NO_GESTURE,
@@ -166,7 +167,7 @@ enum bhi3_wrist_gesture_activity {
 typedef struct bhi3_wrist_gesture_detect
 {
     enum bhi3_wrist_gesture_activity wrist_gesture;
-} __attribute__ ((packed)) bhi3_wrist_gesture_detect_t;
+} BHY2_PACKED bhi3_wrist_gesture_detect_t;
 
 static const char * const bhi3_wrist_gesture_detect_output[] = {
     [NO_GESTURE] = "NO_GESTURE", [WRIST_SHAKE_JIGGLE] = "WRIST_SHAKE_JIGGLE", [FLICK_IN] = "FLICK_IN",
