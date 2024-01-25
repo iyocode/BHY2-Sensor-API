@@ -169,11 +169,12 @@ typedef struct bhi3_wrist_gesture_detect
     enum bhi3_wrist_gesture_activity wrist_gesture;
 } BHY2_PACKED bhi3_wrist_gesture_detect_t;
 
+#ifndef __KALIMBA__
 static const char * const bhi3_wrist_gesture_detect_output[] = {
     [NO_GESTURE] = "NO_GESTURE", [WRIST_SHAKE_JIGGLE] = "WRIST_SHAKE_JIGGLE", [FLICK_IN] = "FLICK_IN",
     [FLICK_OUT] = "FLICK_OUT"
 }; /*lint -e528 */
-
+#endif
 enum bhi3_phy_sensor_acc_power_mode {
     ACC_NORMAL,
     ACC_LOW_POWER = 0x02
@@ -185,6 +186,7 @@ enum bhi3_phy_sensor_gyro_power_mode {
     GYRO_LOW_POWER
 };
 
+#ifndef __KALIMBA__
 static const char * const bhi3_phy_sensor_acc_pwm_output[] = {
     [ACC_NORMAL] = "NORMAL", [ACC_LOW_POWER] = "LOW POWER"
 }; /*lint -e528 */
@@ -192,6 +194,7 @@ static const char * const bhi3_phy_sensor_acc_pwm_output[] = {
 static const char * const bhi3_phy_sensor_gyro_pwm_output[] = {
     [GYRO_NORMAL] = "NORMAL", [GYRO_PERFORMANCE] = "PERFORMANCE", [GYRO_LOW_POWER] = "LOW POWER"
 }; /*lint -e528 */
+#endif
 
 /* End of CPP Guard */
 #ifdef __cplusplus

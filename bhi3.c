@@ -47,6 +47,17 @@
 #include "bhi3.h"
 
 /*************************Private Functions***************************/
+int8_t bhi3_physical_sensor_control_set_config(uint8_t sensor_id,
+                                               const uint8_t *payload,
+                                               uint16_t len,
+                                               uint8_t control_code,
+                                               struct bhy2_dev *dev);
+
+int8_t bhi3_physical_sensor_control_get_config(uint8_t sensor_id,
+                                               uint8_t *payload,
+                                               uint32_t len,
+                                               uint8_t control_code,
+                                               struct bhy2_dev *dev);
 
 /*!
  * @brief To set the Physical Sensor Control Parameters

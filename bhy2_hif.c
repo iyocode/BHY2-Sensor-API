@@ -215,7 +215,7 @@ int8_t bhy2_hif_wait_status_ready(struct bhy2_hif_dev *hif)
 {
     uint16_t retry;
     uint8_t int_status;
-    int8_t rslt;
+    int8_t rslt = BHY2_OK;
 
     /* Wait status ready */
     for (retry = 0; retry < BHY2_QUERY_PARAM_STATUS_READY_MAX_RETRY; ++retry)
@@ -1191,7 +1191,7 @@ int8_t bhy2_hif_get_bsx_state(uint16_t param_id,
     uint16_t tmp_state_len = 0;
     uint8_t block_len = 0;
     uint32_t read_len;
-    int8_t rslt;
+    int8_t rslt = BHY2_OK;
     uint8_t tmp_bsx_state_buf[BHY2_BSX_STATE_STRUCT_LEN];
     uint16_t state_index = 0;
 
@@ -1728,6 +1728,10 @@ int8_t bhy2_hif_set_inject_data_mode(const uint8_t *payload,
                                      const uint32_t *actual_len,
                                      struct bhy2_hif_dev *hif)
 {
+    UNUSED(work_buf);
+    UNUSED(work_buf_len);
+    UNUSED(actual_len);
+
     uint8_t tmp_buf;
     int8_t rslt;
 

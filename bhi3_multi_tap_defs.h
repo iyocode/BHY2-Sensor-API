@@ -114,7 +114,7 @@ typedef union bhi3_singletap_detector_settings
                                                * ROBUST */
         uint16_t reserved8               : 8;
     } as_s;
-} __attribute__ ((packed)) bhi3_singletap_detector_settings_t;
+} BHY2_PACKED bhi3_singletap_detector_settings_t;
 
 /*!
  * Double Tap Configuration.
@@ -128,7 +128,7 @@ typedef union bhi3_doubletap_detector_settings
         uint16_t max_gesture_dur         : 6; /* Maximum time duration from first tap within which matching
                                                * tap/s should happen to be detected as double/triple tap */
     } as_s;
-} __attribute__ ((packed)) bhi3_doubletap_detector_settings_t;
+} BHY2_PACKED bhi3_doubletap_detector_settings_t;
 
 /*!
  * Triple Tap Configuration.
@@ -146,7 +146,7 @@ typedef union bhi3_tripletap_detector_settings
         uint16_t quite_time_after_gesture    : 4; /* Minimum quite time between detection of 2 consecutive
                                                    * selected gesture */
     } as_s;
-} __attribute__ ((packed)) bhi3_tripletap_detector_settings_t;
+} BHY2_PACKED bhi3_tripletap_detector_settings_t;
 
 /*!
  * Multi Tap Configuration.
@@ -156,7 +156,7 @@ typedef struct bhi3_multi_tap_detector
     bhi3_singletap_detector_settings_t stap_setting;
     bhi3_doubletap_detector_settings_t dtap_setting;
     bhi3_tripletap_detector_settings_t ttap_setting;
-} __attribute__ ((packed)) bhi3_multi_tap_detector_t;
+} BHY2_PACKED bhi3_multi_tap_detector_t;
 
 /*!
  * Multi Tap Setting.
@@ -172,6 +172,7 @@ enum bhi3_multi_tap_val {
     TRIPLE_DOUBLE_SINGLE_TAP
 };
 
+#ifndef __KALIMBA__
 /*!
  * Multi Tap Output.
  */
@@ -180,6 +181,7 @@ static const char * const bhi3_multi_tap_string_out[] = {
     [DOUBLE_SINGLE_TAP] = "DOUBLE_SINGLE_TAP", [TRIPLE_TAP] = "TRIPLE_TAP", [TRIPLE_SINGLE_TAP] = "TRIPLE_SINGLE_TAP",
     [TRIPLE_DOUBLE_TAP] = "TRIPLE_DOUBLE_TAP", [TRIPLE_DOUBLE_SINGLE_TAP] = "TRIPLE_DOUBLE_SINGLE_TAP"
 }; /*lint -e528 */
+#endif
 
 /* End of CPP Guard */
 #ifdef __cplusplus
